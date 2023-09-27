@@ -17,3 +17,17 @@ function getComputerChoice() {
         break;
     }
   }
+
+  function playRound(playerSelection, computerSelection) {
+    if (
+      (playerSelection === "Paper" && computerSelection === "Rock") ||
+      (playerSelection === "Rock" && computerSelection === "Scissors") ||
+      (playerSelection === "Scissors" && computerSelection === "Paper")
+    ) {
+      return "player won";
+    } else if (playerSelection === computerSelection) {
+      return "tie";
+    } else {
+      return "computer won";
+    }
+  }
