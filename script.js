@@ -1,33 +1,25 @@
 function getComputerChoice() {
-    let computerArray = ["Rock", "Paper", "Scissors"];
+    let computerArray = ["rock", "paper", "scissors"];
     return computerArray[Math.floor(Math.random() * 3)];
-  }
-
-  function getPlayerChoice() {
-    let random = Math.floor(Math.random() * 3);
-    switch (random) {
-      case 0:
-        return "Rock";
-        break;
-      case 1:
-        return "Paper";
-        break;
-      case 2:
-        return "Scissors";
-        break;
-    }
   }
 
   function playRound(playerSelection, computerSelection) {
     if (
-      (playerSelection === "Paper" && computerSelection === "Rock") ||
-      (playerSelection === "Rock" && computerSelection === "Scissors") ||
-      (playerSelection === "Scissors" && computerSelection === "Paper")
+      (playerSelection === "paper" && computerSelection === "rock") ||
+      (playerSelection === "rock" && computerSelection === "scissors") ||
+      (playerSelection === "scissors" && computerSelection === "paper")
     ) {
       return "player won";
     } else if (playerSelection === computerSelection) {
       return "tie";
     } else {
       return "computer won";
+    }
+  }
+
+  function game() {
+    for (let i = 1; i < 6; i++) {
+      let userAnswer = prompt("Rock, paper or scissors?").toLowerCase();
+      console.log(playRound(userAnswer, getComputerChoice()));
     }
   }
